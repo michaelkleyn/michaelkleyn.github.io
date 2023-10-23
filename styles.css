@@ -1,15 +1,14 @@
 body, html {    
     font-family: Arial, sans-serif;
-    background-color: rgba(var(--tw-bg-color), var(--tw-bg-opacity));
-    color: rgba(var(--tw-text-color), var(--tw-text-opacity));
     scroll-behavior: smooth;
+    background-color: 26, 57, 61;
 }
 
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000; /* This ensures the navbar stays on top of other elements */
+    z-index: 1000;
 }
 
 footer {
@@ -24,31 +23,5 @@ canvas {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1; /* Position canvas behind content */
+    z-index: -1;
 }
-
-[data-theme="dark"] {
---tw-bg-opacity: 1;
---tw-text-opacity: 1;
---tw-border-opacity: 1;
---tw-divide-opacity: 1;
---tw-placeholder-opacity: 1;
---tw-bg-color: 27, 55, 58;
---tw-text-color: 0, 0, 0;
---tw-border-color: 55, 65, 81;
---tw-divide-color: 55, 65, 81;
---tw-placeholder-color: 107, 114, 128;
-}
-
-[data-theme="light"] {
-    --tw-bg-opacity: 1;
-    --tw-text-opacity: 1;
-    --tw-border-opacity: 1;
-    --tw-divide-opacity: 1;
-    --tw-placeholder-opacity: 1;
-    --tw-bg-color: 231, 224, 209;
-    --tw-text-color: 255, 255, 255;
-    --tw-border-color: 229, 231, 235;
-    --tw-divide-color: 229, 231, 235;
-    --tw-placeholder-color: 156, 163, 175;
-    }

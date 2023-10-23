@@ -20,21 +20,14 @@ function windowResized() {
 }
 
 function draw() {
-  background(
-    isDarkMode ? 27 : 231,
-    isDarkMode ? 55 : 224,
-    isDarkMode ? 58 : 209,
-    100
-  );
+  background( 26, 57, 61);
 
   let isMouseMoving = (mouseX !== prevMouseX || mouseY !== prevMouseY);
   let targetSpeedFactor = isMouseMoving ? 1 : 0;
   speedFactor = lerp(speedFactor, targetSpeedFactor, 0.05);  // Adjust the third parameter as needed
 
   for(let particle of particles) {
-    if (isMouseMoving && random(1) < 0.2) {
-      particle.attractToMouse();
-    }
+
 
     particle.move(speedFactor);
     particle.display();
@@ -91,11 +84,11 @@ class Particle {
 
   
 display() {
-  if (isDarkMode) {
-    fill(231, 224, 209, this.transparency); 
-  } else {
-    fill(27, 55, 58, this.transparency); 
-  }
+  
+    fill(71, 85, 105, this.transparency); 
+  
+    fill(173, 171, 158, this.transparency); 
+  
   noStroke();
   ellipse(this.x, this.y, 2);
 }
