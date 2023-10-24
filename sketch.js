@@ -7,28 +7,52 @@ let lastNoiseChangeTime;
 let scrollYPrev = window.scrollY;
 let speedFactor = 0;
 
+let sound;
+let amplitude;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noiseOffsetX = random(1000);  // Initialize with a random value
   noiseOffsetY = random(1000);
   scrollYPrev = window.scrollY;
+  sound = loadSound('./assets/659.mp3');
+  amplitude = new p5.Amplitude();
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
 
+function toggleSound() {
+  const pauseButton = document.getElementById('pauseSound');
+  if (sound.isPlaying()) {
+    sound.stop();
+    pauseButton.classList.add('hidden');
+  } else {
+    sound.play();
+    pauseButton.classList.remove('hidden');
+  }
+}
+
 function draw() {
-  background( 231, 224, 209, 120);
+  if (sound.isPlaying()) {
+    background(231, 224, 209, 50);
+  } else {
+    background(231, 224, 209, 120);
+  }
 
   let isScrolling = (window.scrollY !== scrollYPrev);
   let targetSpeedFactor = isScrolling ? 1 : 0;
   speedFactor = lerp(speedFactor, targetSpeedFactor, 0.05);  // Adjust the third parameter as needed
 
+  let volume = amplitude.getLevel();
+
   for(let particle of particles) {
-
-
-    particle.move(speedFactor);
+    if (sound.isPlaying()) {
+      particle.modulate(volume);
+    } else {
+      particle.move(speedFactor);
+    }
     particle.display();
     particle.updateLifespan();
   }
@@ -58,10 +82,17 @@ class Particle {
     this.speed = random(1, 3);
     this.lifespan = random(50, 255);
     this.transparency = random(transparencyRange[0], transparencyRange[1]);
+    this.time = random(TWO_PI);
     
     // Directional bias to simulate following an invisible terrain
     this.biasX = random(-0.5, 0.5);
     this.biasY = random(-0.5, 0.5);
+  }
+
+  modulate(volume) {
+    this.x += cos(this.time) * volume * 50;  // Change these lines as needed
+    this.y += sin(this.time) * volume * 50;  // to create the effect you want
+    this.time += 0.5;  // Adjust the speed of the vibration
   }
 
   attractToMouse() {
