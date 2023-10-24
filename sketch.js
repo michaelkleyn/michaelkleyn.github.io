@@ -35,11 +35,8 @@ function toggleSound() {
 }
 
 function draw() {
-  if (sound.isPlaying()) {
-    background(231, 224, 209, 50);
-  } else {
-    background(231, 224, 209, 120);
-  }
+  
+  background(231, 224, 209);
 
   let isScrolling = (window.scrollY !== scrollYPrev);
   let targetSpeedFactor = isScrolling ? 1 : 0;
