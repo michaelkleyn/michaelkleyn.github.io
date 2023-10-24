@@ -11,45 +11,45 @@
     <script src="sketch.js" ></script>
 </head>
 <body>
-    <div class="content p-8">
+    <div class="content p-8 font-extralight">
         <div class="navbar h-16 p-4 text-gray-800">
-            <h1 cla class="text-4xl font-bold">
-                Michael Kleyn
-            </h1>
-            <a href="#about">
+            <a href="#about" class="hover:bg-yellow-200">
                 About
             </a>
             |
-            <a href="#projects">
+            <a href="#projects" class="hover:bg-yellow-200">
                 Projects
             </a>
             |
-            <a href="#creative">
+            <a href="#creative" class="hover:bg-yellow-200">
                 Creative
             </a>
             |
-            <a href="./assets/cv-mbk.pdf" download="Michael_Kleyn_CV">
+            <a href="./assets/cv-mbk.pdf" download="Michael_Kleyn_CV" class="hover:bg-yellow-200">
                 CV
             </a>
             |
-            <a href="https://github.com/michaelkleyn">
+            <a href="https://github.com/michaelkleyn" class="hover:bg-yellow-200">
                 Github
             </a>
+            <h1 class="text-4xl bg-yellow-300">
+                Michael Kleyn
+            </h1>
         </div>
-        <div class="scrollable-content">
+        <div>
             <div id="about" class="flex items-center justify-center py-4 min-h-screen">
-                <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
+                <div class="bg-white p-6 rounded-2xl shadow-xl w-3/4" style="background-color: rgba(255, 255, 255, 0.7);">
                     <img src="./assets/michael.jpeg" alt="Description of image" style="float: right; margin-right: 20px; width: 300px; height: auto;">
                     <h2 class="text-2xl font-bold mb-2">About Me</h2>
                     <p class="text-gray-700">
                         My name is Michael. I am an Applied Math and Computer Science student at SFSU. I'm advised by Tao He. Her lab, in affiliation with UCSF, is researching machine learning methods for predicting cell types given TCR data to allow for faster cancer diagnoses.
-                        My research interests span Machine Learning, Computational Biology, and Human-AI Interfaces. Outside of research I'm an avid musician, audio-engineer, tinkerer (I'm making a synthesizer!), book-worm, and outdoors enthusiast.
+                        When not doing work as a researcher I'm a musician, a tinkerer & hacker (making a synthesizer!), a book-worm, and a dog dad.
                     </p>
                 </div>
             </div>
 
             <div id="projects" class="flex items-center justify-center py-4 min-h-screen">
-                <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
+                <div class="bg-white p-6 rounded-2xl shadow-xl w-3/4" style="background-color: rgba(255, 255, 255, 0.7);">
                     <h2 class="text-2xl font-bold mb-2">Projects</h2>
                     <p class="text-gray-700">
                     I'm currently working on a learning management system, and am excited to share more soon!
@@ -59,7 +59,7 @@
             </div>
 
             <div id="creative" class="flex items-center justify-center py-4 min-h-screen">
-                <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
+                <div class="bg-white p-6 rounded-2xl shadow-xl w-3/4" style="background-color: rgba(255, 255, 255, 0.7);">
                     <h2 class="text-2xl font-bold mb-2">Creative</h2>
                     <p class="text-gray-700">
                         Just a place to put all of my creative musings.
@@ -68,10 +68,6 @@
                 </div>
             </div>
         </div>
-
-        <footer>
-            <p class="font-extralight">In movement, we find structure.</p>
-        </footer>
     </div>
 </body>
 </html>

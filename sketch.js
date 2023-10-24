@@ -1,18 +1,17 @@
 let particles = [];
-const maxParticles = 1500;
+const maxParticles = 5000;
 const lifespanDecrease = 2;
 const transparencyRange = [50, 200];
 let noiseOffsetX, noiseOffsetY;
 let lastNoiseChangeTime;
-let prevMouseX, prevMouseY;
+let scrollYPrev = window.scrollY;
 let speedFactor = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noiseOffsetX = random(1000);  // Initialize with a random value
   noiseOffsetY = random(1000);
-  prevMouseX = mouseX;
-  prevMouseY = mouseY;
+  scrollYPrev = window.scrollY;
 }
 
 function windowResized() {
@@ -22,8 +21,8 @@ function windowResized() {
 function draw() {
   background( 231, 224, 209, 120);
 
-  let isMouseMoving = (mouseX !== prevMouseX || mouseY !== prevMouseY);
-  let targetSpeedFactor = isMouseMoving ? 1 : 0;
+  let isScrolling = (window.scrollY !== scrollYPrev);
+  let targetSpeedFactor = isScrolling ? 1 : 0;
   speedFactor = lerp(speedFactor, targetSpeedFactor, 0.05);  // Adjust the third parameter as needed
 
   for(let particle of particles) {
@@ -38,13 +37,18 @@ function draw() {
     particles.push(new Particle());
   }
 
-  prevMouseX = mouseX;
-  prevMouseY = mouseY;
+  scrollYPrev = window.scrollY;
 }
 
 function mousePressed() {
   noiseOffsetX = random(1000);
   noiseOffsetY = random(1000);
+}
+
+function mouseDragged() {
+  for(let particle of particles) {
+    particle.attractToMouse();
+  }
 }
 
 class Particle {
@@ -64,8 +68,8 @@ class Particle {
     let mouseVec = createVector(mouseX, mouseY);
     let posVec = createVector(this.x, this.y);
     let forceVec = mouseVec.sub(posVec);
-    forceVec.limit(20);  // Limit the magnitude of the attraction force
-    posVec.add(forceVec.mult(.3));  // 0.05 is the strength of attraction
+    forceVec.limit(3);  // Limit the magnitude of the attraction force
+    posVec.add(forceVec.mult(.15));  // 0.05 is the strength of attraction
     this.x = posVec.x;
     this.y = posVec.y;
   }
