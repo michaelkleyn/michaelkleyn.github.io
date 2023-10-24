@@ -1,7 +1,6 @@
 body, html {    
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
-    background-color: 26, 57, 61;
 }
 
 .navbar {
@@ -9,6 +8,16 @@ body, html {
     top: 0;
     width: 100%;
     z-index: 1000;
+    background-color: transparent;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.scrollable-content {
+    overflow: auto;
+    height: calc(100vh - 100px); 
 }
 
 footer {

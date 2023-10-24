@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="content p-8">
-        <div class="navbar p-4 text-white">
+        <div class="navbar h-16 p-4 text-gray-800">
             <h1 cla class="text-4xl font-bold">
                 Michael Kleyn
             </h1>
@@ -28,7 +28,7 @@
                 Creative
             </a>
             |
-            <a href="#cv">
+            <a href="./assets/cv-mbk.pdf" download="Michael_Kleyn_CV">
                 CV
             </a>
             |
@@ -36,44 +36,36 @@
                 Github
             </a>
         </div>
-
-        <div id="about" class="flex items-center justify-center min-h-screen">
-            <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
-                <img src="./assets/michael.jpeg" alt="Description of image" style="float: right; margin-right: 20px; width: 300px; height: auto;">
-                <h2 class="text-2xl font-bold mb-2">About Me</h2>
-                <p class="text-gray-700">
-                    My name is Michael. I am an Applied Math and Computer Science student at SFSU. I'm advised by Tao He. Her lab, in affiliation with UCSF, is researching machine learning methods for predicting cell types given TCR data to allow for faster cancer diagnoses.
-                    My research interests span Machine Learning, Computational Biology, and Human-AI Interfaces. Outside of research I'm an avid musician, audio-engineer, tinkerer (I'm making a synthesizer!), book-worm, and outdoors enthusiast.
-                </p>
+        <div class="scrollable-content">
+            <div id="about" class="flex items-center justify-center py-4 min-h-screen">
+                <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
+                    <img src="./assets/michael.jpeg" alt="Description of image" style="float: right; margin-right: 20px; width: 300px; height: auto;">
+                    <h2 class="text-2xl font-bold mb-2">About Me</h2>
+                    <p class="text-gray-700">
+                        My name is Michael. I am an Applied Math and Computer Science student at SFSU. I'm advised by Tao He. Her lab, in affiliation with UCSF, is researching machine learning methods for predicting cell types given TCR data to allow for faster cancer diagnoses.
+                        My research interests span Machine Learning, Computational Biology, and Human-AI Interfaces. Outside of research I'm an avid musician, audio-engineer, tinkerer (I'm making a synthesizer!), book-worm, and outdoors enthusiast.
+                    </p>
+                </div>
             </div>
-        </div>
 
-        <div id="projects" class="flex items-center justify-center min-h-screen">
-            <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
-                <h2 class="text-2xl font-bold mb-2">Projects</h2>
-                <p class="text-gray-700">
-                   I'm currently working on a learning management system, and am excited to share more soon!
-                </p>
-                
+            <div id="projects" class="flex items-center justify-center py-4 min-h-screen">
+                <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
+                    <h2 class="text-2xl font-bold mb-2">Projects</h2>
+                    <p class="text-gray-700">
+                    I'm currently working on a learning management system, and am excited to share more soon!
+                    </p>
+                    
+                </div>
             </div>
-        </div>
 
-        <div id="creative" class="flex items-center justify-center min-h-screen">
-            <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
-                <h2 class="text-2xl font-bold mb-2">Creative</h2>
-                <p class="text-gray-700">
-                    Just a place to put all of my creative musings.
-                </p>
+            <div id="creative" class="flex items-center justify-center py-4 min-h-screen">
+                <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
+                    <h2 class="text-2xl font-bold mb-2">Creative</h2>
+                    <p class="text-gray-700">
+                        Just a place to put all of my creative musings.
+                    </p>
 
-            </div>
-        </div>
-
-        <div id="cv" class="flex items-center justify-center min-h-screen">
-            <div class="bg-white p-6 rounded shadow-xl w-10/12" style="background-color: rgba(255, 255, 255, 0.7);">
-                <h2 class="text-2xl font-bold mb-2">CV</h2>
-                <object data="./assets/cv-mbk.pdf" type="application/pdf" width="100%" height="500px">
-                    <p class="text-gray-700">It appears you don't have a PDF plugin for this browser. No biggie... you can <a href="./assets/cv-mbk.pdf">click here to download the PDF file.</a></p>
-                </object>
+                </div>
             </div>
         </div>
 

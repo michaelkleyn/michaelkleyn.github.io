@@ -20,7 +20,7 @@ function windowResized() {
 }
 
 function draw() {
-  background( 26, 57, 61);
+  background( 231, 224, 209, 120);
 
   let isMouseMoving = (mouseX !== prevMouseX || mouseY !== prevMouseY);
   let targetSpeedFactor = isMouseMoving ? 1 : 0;
@@ -84,11 +84,7 @@ class Particle {
 
   
 display() {
-  
-    fill(71, 85, 105, this.transparency); 
-  
-    fill(173, 171, 158, this.transparency); 
-  
+  fill(169, 149, 110, this.transparency); 
   noStroke();
   ellipse(this.x, this.y, 2);
 }
