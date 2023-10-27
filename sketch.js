@@ -36,7 +36,7 @@ function toggleSound() {
 
 function draw() {
   
-  background(231, 224, 209);
+  background(232, 235, 247);
 
   let isScrolling = (window.scrollY !== scrollYPrev);
   let targetSpeedFactor = isScrolling ? 1 : 0;
@@ -116,7 +116,7 @@ class Particle {
 
   
 display() {
-  fill(169, 149, 110, this.transparency); 
+  fill(223,154,87, this.transparency); 
   noStroke();
   ellipse(this.x, this.y, 2);
 }
