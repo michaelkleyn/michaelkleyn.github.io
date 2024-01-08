@@ -7,6 +7,9 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        'sans': ['Cabin', ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   variants: {
